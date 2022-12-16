@@ -23,3 +23,14 @@ Enter a name for your token and set an expiry. Then give the token "Code" -> "Re
 Make sure to copy the PAT before closing the confirmation page. Once the page is closed you will no longer be able to retrieve the PAT and will need to create another.
 
 ![screenshot showing PAT creation confirmation](./images/created-pat-with-read.jpg)
+
+## Get your Auth token from the PAT
+
+In Git bash or other terminal run: `printf ":{YOUR_ADO_PAT_HERE}" | base64`
+
+Paste the result into a .env.local file at the root of the project in the following format, do not share this value:
+
+*.env.local*
+```shell
+ADO_AUTH_TOKEN={PASTE_RESULT_OF_ABOVE_COMMAND_HERE}
+```
